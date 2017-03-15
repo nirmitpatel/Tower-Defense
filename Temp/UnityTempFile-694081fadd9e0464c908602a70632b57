@@ -77,13 +77,16 @@
 -define:UNITY_EDITOR_WIN
 -define:UNITY_TEAM_LICENSE
 -define:ENABLE_VSTU
+Assets/EnemyDestructionDelegate.cs
 Assets/GameManagerBehavior.cs
+Assets/HealthBar.cs
 Assets/MonsterData.cs
 Assets/MoveEnemy.cs
 Assets/PlaceMonster.cs
 Assets/Scripts/CameraShake.cs
 Assets/Scripts/GameOver.cs
 Assets/Scripts/Tutorial.cs
+Assets/ShootEnemies.cs
 Assets/SpawnEnemy.cs
 -r:"C:\Program Files\Unity\Editor\Data\MonoBleedingEdge\lib\mono\unity\System.Runtime.Serialization.dll"
 -r:"C:\Program Files\Unity\Editor\Data\MonoBleedingEdge\lib\mono\unity\System.Xml.Linq.dll"
