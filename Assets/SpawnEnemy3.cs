@@ -3,20 +3,20 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 
 [System.Serializable]
-public class Wave2
+public class Wave3
 {
     public GameObject enemyPrefab;
     public float spawnInterval = 2;
     public int maxEnemies = 20;
 }
 
-public class SpawnEnemy2 : MonoBehaviour
+public class SpawnEnemy3 : MonoBehaviour
 {
 
     public GameObject[] waypoints;
     public GameObject testEnemyPrefab;
 
-    public Wave2[] waves2;
+    public Wave3[] waves3;
     public int timeBetweenWaves = 10;
 
     private GameManagerBehavior gameManager;
@@ -37,24 +37,24 @@ public class SpawnEnemy2 : MonoBehaviour
     {
         // 1
         int currentWave = gameManager.Wave;
-        if (currentWave < waves2.Length)
+        if (currentWave < waves3.Length)
         {
             // 2
             float timeInterval = Time.time - lastSpawnTime;
-            float spawnInterval = waves2[currentWave].spawnInterval;
+            float spawnInterval = waves3[currentWave].spawnInterval;
             if (((enemiesSpawned == 0 && timeInterval > timeBetweenWaves) ||
                  timeInterval > spawnInterval) &&
-                enemiesSpawned < waves2[currentWave].maxEnemies)
+                enemiesSpawned < waves3[currentWave].maxEnemies)
             {
                 // 3  
                 lastSpawnTime = Time.time;
                 GameObject newEnemy = (GameObject)
-                    Instantiate(waves2[currentWave].enemyPrefab);
+                    Instantiate(waves3[currentWave].enemyPrefab);
                 newEnemy.GetComponent<MoveEnemy>().waypoints = waypoints;
                 enemiesSpawned++;
             }
             // 4 
-            if (enemiesSpawned == waves2[currentWave].maxEnemies &&
+            if (enemiesSpawned == waves3[currentWave].maxEnemies &&
                 GameObject.FindGameObjectWithTag("Enemy") == null)
             {
                 gameManager.Wave++;
@@ -68,8 +68,8 @@ public class SpawnEnemy2 : MonoBehaviour
         {
             gameManager.gameOver = true;
             GameObject gameOverText = GameObject.FindGameObjectWithTag("GameWon");
-            SceneManager.LoadScene("GameScene3");
-            //gameOverText.GetComponent<Animator>().SetBool("gameOver", true);
+            //SceneManager.LoadScene("GameScene3");
+            gameOverText.GetComponent<Animator>().SetBool("gameOver", true);
         }
     }
 }
