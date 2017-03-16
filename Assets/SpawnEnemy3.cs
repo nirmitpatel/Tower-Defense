@@ -68,8 +68,16 @@ public class SpawnEnemy3 : MonoBehaviour
         {
             gameManager.gameOver = true;
             GameObject gameOverText = GameObject.FindGameObjectWithTag("GameWon");
-            //SceneManager.LoadScene("GameScene3");
-            gameOverText.GetComponent<Animator>().SetBool("gameOver", true);
+            SceneManager.LoadScene("GameScene1");
+            //gameOverText.GetComponent<Animator>().SetBool("gameOver", true);
+        }
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            SceneManager.LoadScene("GameScene");
+        }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            SceneManager.LoadScene("GameScene2");
         }
     }
 }

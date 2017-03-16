@@ -17,13 +17,31 @@ Platform assembly: C:\Users\nirmi\Desktop\Games\Tower Defense\Tower Defense\game
 Loading C:\Users\nirmi\Desktop\Games\Tower Defense\Tower Defense\game_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
 Platform assembly: C:\Users\nirmi\Desktop\Games\Tower Defense\Tower Defense\game_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
 Loading C:\Users\nirmi\Desktop\Games\Tower Defense\Tower Defense\game_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
-- Completed reload, in  0.285 seconds
+- Completed reload, in  0.386 seconds
 Platform assembly: C:\Users\nirmi\Desktop\Games\Tower Defense\Tower Defense\game_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\nirmi\Desktop\Games\Tower Defense\Tower Defense\game_Data\Managed\System.dll (this message is harmless)
 desktop: 1366x768 60Hz; virtual: 1366x768 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 1.913392 ms
+UnloadTime: 2.225646 ms
+Unloading 5 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 26.093904 ms
+
+Unloading 31 unused Assets to reduce memory usage. Loaded Objects now: 538.
+Total: 1.208749 ms (FindLiveObjects: 0.136981 ms CreateObjectMapping: 0.150402 ms MarkObjects: 0.784779 ms  DeleteObjects: 0.135402 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 1.949315 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 589.
+Total: 0.773331 ms (FindLiveObjects: 0.106189 ms CreateObjectMapping: 0.056450 ms MarkObjects: 0.590163 ms  DeleteObjects: 0.018948 ms)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 2.623562 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 589.
+Total: 1.132560 ms (FindLiveObjects: 0.118032 ms CreateObjectMapping: 0.061582 ms MarkObjects: 0.937945 ms  DeleteObjects: 0.012632 ms)
+
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 2cc8 -> priority: 1 
+  Thread -> id: 1b34 -> priority: 1 

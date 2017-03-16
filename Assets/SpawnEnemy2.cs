@@ -71,5 +71,13 @@ public class SpawnEnemy2 : MonoBehaviour
             SceneManager.LoadScene("GameScene3");
             //gameOverText.GetComponent<Animator>().SetBool("gameOver", true);
         }
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            SceneManager.LoadScene("GameScene3");
+        }
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            SceneManager.LoadScene("GameScene");
+        }
     }
 }
