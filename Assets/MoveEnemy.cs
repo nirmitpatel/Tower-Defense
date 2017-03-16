@@ -8,25 +8,8 @@ public class MoveEnemy : MonoBehaviour {
 	private float lastWaypointSwitchTime;
 	public float speed = 1.0f;
 
-    private void RotateIntoMoveDirection()
-    {
-        //1
-        Vector3 newStartPosition = waypoints[currentWaypoint].transform.position;
-        Vector3 newEndPosition = waypoints[currentWaypoint + 1].transform.position;
-        Vector3 newDirection = (newEndPosition - newStartPosition);
-        //2
-        float x = newDirection.x;
-        float y = newDirection.y;
-        float rotationAngle = Mathf.Atan2(y, x) * 180 / Mathf.PI;
-        //3
-        GameObject sprite = (GameObject)
-            gameObject.transform.FindChild("Sprite").gameObject;
-        sprite.transform.rotation =
-            Quaternion.AngleAxis(rotationAngle, Vector3.forward);
-    }
-
-    // Use this for initialization
-    void Start () {
+	// Use this for initialization
+	void Start () {
 		lastWaypointSwitchTime = Time.time;
 	}
 	
@@ -46,34 +29,48 @@ public class MoveEnemy : MonoBehaviour {
 				// 4 Switch to next waypoint
 				currentWaypoint++;
 				lastWaypointSwitchTime = Time.time;
-
-                // TODO: Rotate into move direction
-                RotateIntoMoveDirection();
-            } else {
+			
+				RotateIntoMoveDirection();
+			} else {
 				// 5 Destroy enemy
 				Destroy(gameObject);
  
 				AudioSource audioSource = gameObject.GetComponent<AudioSource>();
 				AudioSource.PlayClipAtPoint(audioSource.clip, transform.position);
-                // TODO: deduct health
-                GameManagerBehavior gameManager = GameObject.Find("GameManager").GetComponent<GameManagerBehavior>();
-                gameManager.Health -= 1;
-            }
+
+				GameManagerBehavior gameManager =
+					GameObject.Find("GameManager").GetComponent<GameManagerBehavior>();
+				gameManager.Health -= 1;
+			}
 		}
 	}
 
-    public float distanceToGoal()
-    {
-        float distance = 0;
-        distance += Vector3.Distance(
-            gameObject.transform.position,
-            waypoints[currentWaypoint + 1].transform.position);
-        for (int i = currentWaypoint + 1; i < waypoints.Length - 1; i++)
-        {
-            Vector3 startPosition = waypoints[i].transform.position;
-            Vector3 endPosition = waypoints[i + 1].transform.position;
-            distance += Vector3.Distance(startPosition, endPosition);
-        }
-        return distance;
-    }
+	private void RotateIntoMoveDirection() {
+		//1
+		Vector3 newStartPosition = waypoints [currentWaypoint].transform.position;
+		Vector3 newEndPosition = waypoints [currentWaypoint + 1].transform.position;
+		Vector3 newDirection = (newEndPosition - newStartPosition);
+		//2
+		float x = newDirection.x;
+		float y = newDirection.y;
+		float rotationAngle = Mathf.Atan2 (y, x) * 180 / Mathf.PI;
+		//3
+		GameObject sprite = (GameObject)
+			gameObject.transform.FindChild("Sprite").gameObject;
+		sprite.transform.rotation = 
+			Quaternion.AngleAxis(rotationAngle, Vector3.forward);
+	}
+
+	public float distanceToGoal() {
+		float distance = 0;
+		distance += Vector3.Distance(
+			gameObject.transform.position, 
+			waypoints [currentWaypoint + 1].transform.position);
+		for (int i = currentWaypoint + 1; i < waypoints.Length - 1; i++) {
+			Vector3 startPosition = waypoints [i].transform.position;
+			Vector3 endPosition = waypoints [i + 1].transform.position;
+			distance += Vector3.Distance(startPosition, endPosition);
+		}
+		return distance;
+	}
 }

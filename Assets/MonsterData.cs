@@ -6,6 +6,8 @@ using System.Collections.Generic;
 public class MonsterLevel {
   public int cost;
   public GameObject visualization;
+  public GameObject bullet;
+  public float fireRate;
 }
 
 public class MonsterData : MonoBehaviour {
@@ -13,15 +15,6 @@ public class MonsterData : MonoBehaviour {
 	public List<MonsterLevel> levels;
 	private MonsterLevel currentLevel;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 	
 	//1
 	public MonsterLevel CurrentLevel {
@@ -33,7 +26,7 @@ public class MonsterData : MonoBehaviour {
 		set {
 			currentLevel = value;
 			int currentLevelIndex = levels.IndexOf(currentLevel);
- 
+			
 			GameObject levelVisualization = levels[currentLevelIndex].visualization;
 			for (int i = 0; i < levels.Count; i++) {
 				if (levelVisualization != null) {
@@ -46,7 +39,17 @@ public class MonsterData : MonoBehaviour {
 			}
 		}
 	}
+
+	// Use this for initialization
+	void Start () {
 	
+	}
+	
+	// Update is called once per frame
+	void Update () {
+	
+	}
+
 	void OnEnable() {
  		CurrentLevel = levels[0];
 	}
